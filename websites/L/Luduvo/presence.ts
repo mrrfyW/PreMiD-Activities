@@ -57,7 +57,7 @@ presence.on('UpdateData', async () => {
 
   // API
   if (hostname === 'api.luduvo.com') {
-    presenceData.details = 'Luduvo (API)'
+    presenceData.name = 'Luduvo (API)'
     if (pathname.startsWith('/auth/sso/discourse')) {
       presenceData.state = 'Signing In/Up'
     }
