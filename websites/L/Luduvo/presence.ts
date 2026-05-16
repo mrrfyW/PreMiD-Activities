@@ -95,6 +95,10 @@ presence.on('UpdateData', async () => {
         const infoTitle = getText('h1[class*="text-5xl"][class*="font-bold"][class*="mb-4"]')
         presenceData.state = infoTitle ? `${infoTitle}` : 'User Info'
       }
+      else if (paths[2] === 'inventory') {
+        const inventoryUser = getText('h1[class*="text-5xl"][class*="font-bold"][class*="mb-4"][class*="text-center"][class*="sm:text-left"]')
+        presenceData.state = inventoryUser ? `Inventory of: ${inventoryUser}` : 'Inventory'
+      }
       else if (paths[2] === 'trade') {
         const inventoryTitle = getText('h2[class*="text-lg"][class*="font-semibold"]').replace('\'s Inventory', '')
         presenceData.state = inventoryTitle ? `Requesting a Trade with ${inventoryTitle}` : 'Requesting a Trade'
